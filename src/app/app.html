@@ -1,74 +1,11 @@
+<h1>Users</h1>
 
-<style>
-  :host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5;
-  }
-
-  .login-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-
-  h1 {
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-
-  input {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  button {
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    background-color: #007bff;
-    cursor: pointer;
-    margin-bottom: 1rem;
-  }
-
-  button:hover {
-    background-color: #0056b3;
-  }
-
-  .google-btn {
-    background-color: #db4437;
-  }
-
-  .google-btn:hover {
-    background-color: #c23321;
-  }
-</style>
-
-<main>
-  <div class="login-container">
-    <h1>Login</h1>
-    <input type="email" placeholder="Email" #email />
-    <input type="password" placeholder="Password" #password />
-    <button (click)="login(email.value, password.value)">Login</button>
-    <button class="google-btn" (click)="loginWithGoogle()">Login with Google</button>
-
-    @if (user()) {
-      <div>
-        <h2>Welcome, {{ user()?.email }}</h2>
-        <button (click)="logout()">Logout</button>
-      </div>
+@if (users$ | async; as users) {
+  <ul>
+    @for (user of users; track user.id) {
+      <li>{{ user.name }}</li>
     }
-  </div>
-</main>
+  </ul>
+} @else {
+  <p>Loading users...</p>
+}
