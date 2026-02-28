@@ -1,12 +1,16 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { UserService } from './user.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [AsyncPipe]
 })
-export class App {
-  protected readonly title = signal('myapp');
+export class AppComponent {
+  private userService = inject(UserService);
+  users$ = this.userService.getUsers();
 }
