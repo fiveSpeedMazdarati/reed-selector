@@ -1,7 +1,7 @@
-
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { UserService } from './user.service';
+import { DatabaseService } from './database.service';
 import { AsyncPipe } from '@angular/common';
+import { User } from './user'; // Import the User interface
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { AsyncPipe } from '@angular/common';
   imports: [AsyncPipe]
 })
 export class AppComponent {
-  private userService = inject(UserService);
-  users$ = this.userService.getUsers();
+  private database = inject(DatabaseService);
+  // Strongly type the users$ observable
+  users$ = this.database.getCollection<User>('users');
 }
