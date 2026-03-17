@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f7f9fc;
+  color: #1f2937;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 2rem;
+}
+
+ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+.latest-pairings-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.latest-pairings-card {
+  width: 100%;
+  max-width: 760px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.2rem 1.2rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.latest-pairings-card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 0.35rem 0 0.9rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.pairing-grid {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.4rem;
+}
+
+.pairing-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f9fafb;
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+}
+
+.pairing-row {
+  font-size: 0.92rem;
+  margin-bottom: 0.2rem;
+  color: #111827;
+}
+
+.label {
+  font-weight: 700;
+  color: #111827;
+}

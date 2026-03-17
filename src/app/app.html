@@ -5,4 +5,21 @@
       <li>{{ user.name }}</li>
     }
   </ul>
+
+  <section class="latest-pairings-section">
+    <div class="latest-pairings-card">
+      <h2>Latest Known Good Reed + Mouthpiece Pairings</h2>
+      <p class="subtitle">Trusted combinations from the latest additions</p>
+      <div class="pairing-grid">
+        @for (pairing of latestPairings; track pairing.reed) {
+          <article class="pairing-item">
+            <div class="pairing-row"><span class="label">Reed:</span> {{ pairing.reed }}</div>
+            <div class="pairing-row"><span class="label">Mouthpiece:</span> {{ pairing.mouthpiece }}</div>
+            <div class="pairing-row"><span class="label">Why:</span> {{ pairing.note }}</div>
+            <div class="pairing-row"><span class="label">Added:</span> {{ pairing.added }}</div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
 </div>
